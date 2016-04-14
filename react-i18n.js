@@ -1,33 +1,35 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
+import { createContainer } from 'meteor/react-meteor-data';
 
 
-export default I18n = React.createClass({
-  mixins: [ReactMeteorData],
-  getDefaultProps() {
-    return {
-      i18nkey: '',
-      options: {},
-      lang_tag: false
-    };
-  },
-  getMeteorData() {
-    let {i18nkey, options, lang_key} = this.props;
-    let i18nResult = TAPi18n.__(i18nkey, options, lang_key);
-    return {
-      i18nResult
-    };
-  },
-  propTypes() {
-    return {
-      i18nkey: React.PropTypes.string,
-      options: React.ProPTypes.object,
-      lang_tag: React.PropTypes.string
-    };
-  },
+class I18nComponent extends React.Component {
   render() {
     return (<span>
-      {this.data.i18nResult}
+      {this.props.i18nResult}
     </span>);
   }
-});
+}
+
+I18nComponent.propTypes = {
+  i18nkey: React.PropTypes.string,
+  options: React.PropTypes.object,
+  lang_tag: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.bool
+  ])
+};
+
+I18nComponent.defaultProps = {
+  i18nkey: '',
+  options: {},
+  lang_tag: false
+};
+
+
+export default I18n = createContainer(({i18nkey, options, lang_key})=>{
+  let i18nResult = TAPi18n.__(i18nkey, options, lang_key);
+  return {
+    i18nResult
+  };
+}, I18nComponent);

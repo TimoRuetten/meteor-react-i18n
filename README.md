@@ -16,9 +16,11 @@ This package uses the [TAPi18n](https://github.com/TAPevents/tap-i18n) package.
 ## Usage
 
 ```
-	<I18n 
-		i18nkey="hello_world"
-	/>
+import I18n from 'meteor/timoruetten:react-i18n';
+
+<I18n 
+	i18nkey="hello_world"
+/>
 ```
 
 This will return a reactive value for the key hello_world. Its simular to TAPi18n.__('hello_world')

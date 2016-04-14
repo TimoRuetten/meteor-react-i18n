@@ -1,6 +1,6 @@
 Package.describe({
   name: 'timoruetten:react-i18n',
-  version: '0.0.2',
+  version: '0.0.3',
   summary: 'Simple wrapper for TAPi18n for reactjs',
   git: 'https://github.com/TimoRuetten/meteor-react-i18n',
   documentation: 'README.md'
@@ -12,9 +12,6 @@ Package.onUse(function(api) {
   api.use('tap:i18n@1.8.0');
   api.use('react-meteor-data@0.2.8');
   api.mainModule('react-i18n.js');
-  /*api.export([
-    'I18n'
-  ], ['client', 'server']);*/
 });
 
 Package.onTest(function(api) {

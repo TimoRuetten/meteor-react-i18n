@@ -27,7 +27,7 @@ I18nComponent.defaultProps = {
 };
 
 
-export default I18n = createContainer(({i18nkey, options, lang_key})=>{
+export default createContainer(({i18nkey, options, lang_key})=>{
   let i18nResult = TAPi18n.__(i18nkey, options, lang_key);
   return {
     i18nResult

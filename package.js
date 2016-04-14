@@ -1,6 +1,6 @@
 Package.describe({
   name: 'timoruetten:react-i18n',
-  version: '0.0.3',
+  version: '0.0.4',
   summary: 'Simple wrapper for TAPi18n for reactjs',
   git: 'https://github.com/TimoRuetten/meteor-react-i18n',
   documentation: 'README.md'

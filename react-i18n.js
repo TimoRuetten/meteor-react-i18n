@@ -2,7 +2,7 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 
 
-export const I18n = React.createClass({
+export default I18n = React.createClass({
   mixins: [ReactMeteorData],
   getDefaultProps() {
     return {
